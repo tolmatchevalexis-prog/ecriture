@@ -1,352 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
 
-:root {
-  --background: #f7f7f4;
-  --text: #1d2022;
-  --secondary: #686e72;
-  --line: #cfd3d4;
-  --hover: #e8ebeb;
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  --sans: Arial, Helvetica, sans-serif;
-  --serif: "Newsreader", Georgia, serif;
+  <meta
+    name="description"
+    content="Site indépendant consacré aux textes d’Alexis Tolmatchev."
+  >
 
-  --page-margin: clamp(22px, 5vw, 76px);
-  --content-width: 1180px;
-  --reading-width: 720px;
-}
+  <title>Écriture — Alexis Tolmatchev</title>
 
-* {
-  box-sizing: border-box;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-html {
-  scroll-behavior: smooth;
-}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap"
+    rel="stylesheet"
+  >
 
-body {
-  margin: 0;
-  background: var(--background);
-  color: var(--text);
-  font-family: var(--serif);
-  font-size: 19px;
-  line-height: 1.65;
-  text-rendering: optimizeLegibility;
-}
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-a {
-  color: inherit;
-}
+<body>
 
-.skip-link {
-  position: fixed;
-  top: 12px;
-  left: 12px;
-  z-index: 100;
-  padding: 10px 14px;
-  background: var(--text);
-  color: var(--background);
-  font-family: var(--sans);
-  font-size: 13px;
-  text-decoration: none;
-  transform: translateY(-150%);
-}
+  <a class="skip-link" href="#contenu">
+    Aller au contenu
+  </a>
 
-.skip-link:focus {
-  transform: translateY(0);
-}
+  <header class="site-header">
 
-.site-header {
-  position: relative;
-  z-index: 10;
-  width: min(
-    calc(100% - (var(--page-margin) * 2)),
-    var(--content-width)
-  );
-  margin: 0 auto;
-  padding: 26px 0;
-  border-bottom: 1px solid var(--line);
+    <a class="site-name" href="#accueil">
+      Écriture
+    </a>
 
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 24px;
-}
+    <details class="menu">
+      <summary aria-label="Ouvrir le menu">
+        Menu
+      </summary>
 
-.site-name {
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  text-decoration: none;
-  text-transform: uppercase;
-}
+      <nav aria-label="Navigation principale">
+        <a href="#accueil">Accueil</a>
+        <a href="#textes">Textes</a>
+        <a href="#collections">Collections</a>
+        <a href="#a-propos">À propos</a>
+      </nav>
+    </details>
 
-.menu {
-  position: relative;
-  font-family: var(--sans);
-  font-size: 13px;
-}
+  </header>
 
-.menu summary {
-  list-style: none;
-  cursor: pointer;
-  user-select: none;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
+  <main id="contenu">
 
-.menu summary::-webkit-details-marker {
-  display: none;
-}
+    <section class="hero" id="accueil">
 
-.menu summary::after {
-  content: " +";
-}
+      <p class="author">
+        Alexis Tolmatchev
+      </p>
 
-.menu[open] summary::after {
-  content: " –";
-}
+      <h1>
+        Les textes ne sont pas<br>
+        du contenu de flux.
+      </h1>
 
-.menu nav {
-  position: absolute;
-  top: 34px;
-  right: 0;
-  min-width: 170px;
-  padding: 8px;
-  background: var(--background);
-  border: 1px solid var(--line);
-}
+      <p class="hero-line">
+        Ce sont des formes stabilisées.
+      </p>
 
-.menu nav a {
-  display: block;
-  padding: 9px 10px;
-  text-decoration: none;
-}
+    </section>
 
-.menu nav a:hover,
-.menu nav a:focus-visible {
-  background: var(--hover);
-}
+    <section class="introduction">
 
-main {
-  width: min(
-    calc(100% - (var(--page-margin) * 2)),
-    var(--content-width)
-  );
-  margin: 0 auto;
-}
+      <p class="large-text">
+        Ce site indépendant rassemble des textes stabilisés :
+        récits, essais, dialogues, journaux et ensembles littéraires.
+      </p>
 
-.hero {
-  min-height: 72vh;
-  padding: clamp(90px, 14vw, 180px) 0 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+      <p>
+        Il est conçu comme une archive durable et un lieu de lecture
+        calme, sans commentaires, compteurs, recommandations
+        ni agitation sociale.
+      </p>
 
-.author {
-  margin: 0 0 30px;
-  font-family: var(--sans);
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
+    </section>
 
-.hero h1 {
-  max-width: 900px;
-  margin: 0;
-  font-family: var(--sans);
-  font-size: clamp(42px, 7vw, 96px);
-  font-weight: 400;
-  line-height: 0.98;
-  letter-spacing: -0.045em;
-}
+    <section class="site-section" id="textes">
 
-.hero-line {
-  margin: 42px 0 0;
-  font-family: var(--sans);
-  font-size: clamp(17px, 2vw, 24px);
-  line-height: 1.35;
-}
+      <header class="section-header">
+        <p class="section-number">01</p>
+        <h2>Textes</h2>
+      </header>
 
-.introduction {
-  max-width: var(--reading-width);
-  padding: 90px 0 120px;
-  border-top: 1px solid var(--line);
-}
+      <div class="section-content">
 
-.introduction p {
-  margin: 0 0 28px;
-}
+        <p>
+          Des textes autonomes, publiés ici dans leur version
+          stabilisée.
+        </p>
 
-.large-text {
-  font-size: clamp(27px, 3.5vw, 45px);
-  line-height: 1.22;
-}
+        <a class="section-link" href="#collections">
+          Parcourir les ensembles
+        </a>
 
-.site-section {
-  padding: 44px 0 110px;
-  border-top: 1px solid var(--line);
-}
+      </div>
 
-.section-header {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 30px;
-  align-items: baseline;
-  margin-bottom: 58px;
-}
+    </section>
 
-.section-number {
-  margin: 0;
-  color: var(--secondary);
-  font-family: var(--sans);
-  font-size: 12px;
-}
+    <section class="site-section" id="collections">
 
-.section-header h2 {
-  margin: 0;
-  font-family: var(--sans);
-  font-size: clamp(32px, 4vw, 56px);
-  font-weight: 400;
-  line-height: 1;
-  letter-spacing: -0.025em;
-}
+      <header class="section-header">
+        <p class="section-number">02</p>
+        <h2>Collections</h2>
+      </header>
 
-.section-content {
-  max-width: var(--reading-width);
-  margin-left: 110px;
-}
+      <div class="collection-list">
 
-.section-content p {
-  margin: 0 0 24px;
-}
+        <article class="collection">
+          <h3>Chambres d’échos</h3>
+          <p>
+            Dialogues, protocoles et textes à plusieurs voix.
+          </p>
+        </article>
 
-.section-link {
-  display: inline-block;
-  margin-top: 20px;
-  padding-bottom: 3px;
-  border-bottom: 1px solid var(--text);
-  font-family: var(--sans);
-  font-size: 14px;
-  text-decoration: none;
-}
+        <article class="collection">
+          <h3>Journal d’atelier</h3>
+          <p>
+            Textes issus du travail, de ses déplacements
+            et de ses seuils.
+          </p>
+        </article>
 
-.collection-list {
-  margin-left: 110px;
-}
+        <article class="collection">
+          <h3>Contes</h3>
+          <p>
+            Récits courts et formes narratives.
+          </p>
+        </article>
 
-.collection {
-  max-width: 780px;
-  padding: 26px 0 30px;
-  border-top: 1px solid var(--line);
-}
+        <article class="collection">
+          <h3>Essais et notes</h3>
+          <p>
+            Textes de pensée, fragments et prises de position.
+          </p>
+        </article>
 
-.collection:last-child {
-  border-bottom: 1px solid var(--line);
-}
+      </div>
 
-.collection h3 {
-  margin: 0 0 8px;
-  font-family: var(--sans);
-  font-size: clamp(21px, 2.4vw, 30px);
-  font-weight: 400;
-}
+    </section>
 
-.collection p {
-  max-width: 590px;
-  margin: 0;
-  color: var(--secondary);
-}
+    <section class="site-section" id="a-propos">
 
-.site-footer {
-  width: min(
-    calc(100% - (var(--page-margin) * 2)),
-    var(--content-width)
-  );
-  margin: 0 auto;
-  padding: 30px 0 50px;
-  border-top: 1px solid var(--line);
+      <header class="section-header">
+        <p class="section-number">03</p>
+        <h2>À propos</h2>
+      </header>
 
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
+      <div class="section-content">
 
-  font-family: var(--sans);
-  font-size: 12px;
-}
+        <p>
+          Ce site est la maison du texte d’Alexis Tolmatchev.
+        </p>
 
-.site-footer p {
-  margin: 0;
-}
+        <p>
+          Il accueille des formes littéraires dégagées de la logique
+          des plateformes et de leur flux permanent.
+        </p>
 
-.site-footer a {
-  text-decoration: none;
-}
+        <p>
+          Le site principal demeure la maison générale de l’artiste :
+          arts visuels, installations, parcours et contact.
+        </p>
 
-@media (max-width: 700px) {
+      </div>
 
-  body {
-    font-size: 18px;
-  }
+    </section>
 
-  .site-header {
-    padding: 20px 0;
-  }
+  </main>
 
-  .menu nav {
-    top: 30px;
-  }
+  <footer class="site-footer">
 
-  .hero {
-    min-height: 76vh;
-    padding: 80px 0 60px;
-  }
+    <p>
+      Alexis Tolmatchev
+    </p>
 
-  .hero h1 br {
-    display: none;
-  }
+    <a href="#accueil">
+      Retour en haut
+    </a>
 
-  .introduction {
-    padding: 70px 0 90px;
-  }
+  </footer>
 
-  .site-section {
-    padding-bottom: 80px;
-  }
-
-  .section-header {
-    grid-template-columns: 38px 1fr;
-    gap: 12px;
-    margin-bottom: 42px;
-  }
-
-  .section-content,
-  .collection-list {
-    margin-left: 50px;
-  }
-
-  .site-footer {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 430px) {
-
-  :root {
-    --page-margin: 20px;
-  }
-
-  .section-content,
-  .collection-list {
-    margin-left: 0;
-  }
-
-  .section-header {
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
-
-  .hero h1 {
-    font-size: 43px;
-  }
-}
+</body>
+</html>
